@@ -4,8 +4,7 @@ public class Welcome1 {
 
 	public static void main(String[] args) {
 		
-		System.out.print("Welcome to ");
-		System.out.println("Java programming!");
+		System.out.println("Welcome\nto\nJava\nProgramming!");
 
 	}
 
