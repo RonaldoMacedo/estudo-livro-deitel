@@ -1,17 +1,16 @@
 package capitulo8;
 
-public class Employee {
+public abstract class Employee {
 	
-	private static int count = 0;
-	private String firstName;
-	private String lastName;
+	private final String firstName;
+	private final String lastName;
+	private final String socialSecurityNumber;
 	
-	public Employee(String firstName, String lastName) {
+	public Employee(String firstName, String lastName, String socialSecurityNumber) {
 		this.firstName = firstName;
 		this.lastName = lastName;
-		
-		++count;
-		System.out.printf("Employee constructor: %s %s; count = %d%n", firstName, lastName, count);
+		this.socialSecurityNumber = socialSecurityNumber;
+
 	}
 	
 	public String getFirstName() {
@@ -21,9 +20,17 @@ public class Employee {
 	public String getLastName() {
 		return lastName;
 	}
-	
-	public static int getCount() {
-		return count;
+
+	public String getSocialSecurityNumber() {
+		return socialSecurityNumber;
 	}
+	
+	@Override
+	public String toString() {
+		return String.format("%s %s%nsocial security number: %s",
+						     getFirstName(), getLastName(), getSocialSecurityNumber());
+	}
+	
+	public abstract double earnings();
 
 }
