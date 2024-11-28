@@ -14,7 +14,7 @@ public class CommissionEmployee extends Object {
 		if(grossSales < 0.0)
 			throw new IllegalArgumentException("Gross sales must be >= 0");
 		
-		if(commissionRate <= 0.0 || comissionRate >= 1.0)
+		if(commissionRate <= 0.0 && comissionRate >= 1.0)
 			throw new IllegalArgumentException("Commission rate must be > 0.0 and < 1.0");
 		
 		this.firstName = firstName;
